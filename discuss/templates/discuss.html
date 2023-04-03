@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discussion Forum</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+#nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
+#nav-item {
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#nav-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-link:hover:active {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:block;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  backdrop-filter: blur(15px);
+}
+
+#header-img{
+  max-width: 200px;
+  height: auto;
+}
+
+.container{
+  padding-top: 100px;
+}
+
+body{
+  background-color: burlywood;
+  font-family: "Poppins", sans-serif;
+}
+
+h2{
+  padding-bottom: 10px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <img src="https://teachbeyond.org/site-content/uploads/Beyond-Borders-Logo-2.png" id="header-img">
+        <ul id="nav-list">
+            <p id="nav-item"><a href="{% url 'index' %}" id="nav-link">Home</a></p>
+            <p id="nav-item"><a href="{% url 'faq' %}" id="nav-link">FAQ</a></p>
+            <p id="nav-item"><a href="{% url 'discuss' %}" id="nav-link">Discuss</a></p>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="text-center mb-4">Discussion Forum</h1>
+        <h2>Please keep comments respectful and follow</h2>
+        <h2 class="text-center">the guidelines or it may be removed</h2>
+        <form method="post" class="text-center">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="{{ form.name.id_for_label }}"><h5>Name:</h5></label>
+            {{ form.name }}
+          </div>
+          <div class="form-group">
+            <!--<h5>Type your message here:</h5>-->
+            {{ form.message }}
+          </div>
+          <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+        <hr>
+        {% for post in posts %}
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3>{{ post.name }}</h3>
+              <p>{{ post.message }}</p>
+              <small>{{ post.created_at }}</small>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="{% static 's.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <img src="https://teachbeyond.org/site-content/uploads/Beyond-Borders-Logo-2.png" id="header-img">
+        <ul id="nav-list">
+            <li id="nav-item"><a href="{% url 'index' %}" id="nav-link">Home</a></li>
+            <li id="nav-item"><a href="{% url 'faq' %}" id="nav-link">FAQ</a></li>
+            <li id="nav-item"><a href="{% url 'discuss' %}" id="nav-link">Discuss</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="wrapper">
+        <div class="image__wrapper">
+            <div class="image__wrapper_inner">
+                <!--<img class="box" src="{% static 'illustration-woman-online-desktop.svg' %}">-->
+            </div>
+            <img class="box" src="{% static 'illustration-box-desktop.svg' %}" alt="box">
+        </div>
+    <div class="accordion__wrapper">
+        <h1 class="title__accordion">Frequently Asked Questions</h1>
+        <div class="questions__accordions">
+
+            <div class="question-answer__accordion">
+                <div class="question">
+                    <h3 class="title__question">
+                        How does the recommendation system work?
+                    </h3>
+                    <img src="{% static 'icon-arrow-down.svg' %}" >
+                </div>
+                <div class="answer">
+                    Our Recommendation Sytem uses a comibination of complex Machine learning Algorithms to find The Best Colleges for You.
+                </div>
+            </div>
+
+            <div class="question-answer__accordion">
+                <div class="question">
+                    <h3 class="title__question">
+                        What factors are considered in the recommendation process?
+                    </h3>
+                    <img src="{% static 'icon-arrow-down.svg' %}" >
+                </div>
+                <div class="answer ">
+                    Inorder To Find The best Colleges for you we take into account your CGPA , GRE , TOEFL scores and Your Preffered Country.
+                </div>
+            </div>
+
+            <div class="question-answer__accordion">
+                <div class="question">
+                    <h3 class="title__question">
+                        How accurate are the recommendations?
+                    </h3>
+                    <img src="{% static 'icon-arrow-down.svg' %}">
+                </div>
+                <div class="answer ">
+                    Our Recommendation Sytem is very accurate with an accruracy rate of 80-90 %.
+                </div>
+            </div>
+
+            <div class="question-answer__accordion">
+                <div class="question">
+                    <h3 class="title__question">
+                        How often are recommendations updated?
+                    </h3>
+                    <img src="{% static 'icon-arrow-down.svg' %}">
+                </div>
+                <div class="answer ">
+                    The Recommendations are Updated Every Year.
+                </div>
+            </div>
+            
+            <div class="question-answer__accordion">
+                <div class="question">
+                    <h3 class="title__question">
+                    Can I trust the recommendations provided by the system?
+                    </h3>
+                    <img src="{% static 'icon-arrow-down.svg' %}">
+                </div>
+                <div class="answer ">
+                    Yes , absolutely !
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

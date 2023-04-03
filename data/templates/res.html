@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'result.css' %}">
+    <title>Results</title>
+</head>
+
+<body>
+    
+    <header>
+        <nav>
+            <img src="https://teachbeyond.org/site-content/uploads/Beyond-Borders-Logo-2.png" id="header-img">
+            <ul id="nav-list">
+                <li id="nav-item"><a href="{% url 'index' %}" id="nav-link">Home</a></li>
+                <li id="nav-item"><a href="{% url 'faq' %}" id="nav-link">FAQ</a></li>
+                <li id="nav-item"><a href="{% url 'discuss' %}" id="nav-link">Discuss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="user"><p>Hello {{name}}</p><p>GRE Score: {{gre}}</p> <p>TOEFL Score: {{toefl}}</p> <p>CGPA: {{cgpa}}</p> <p>Chosen Country: {{country}}</p></div>
+    <div class="back">
+    <des><p class="des">University Name</p><p class="des">Country</p></des>
+    {% for i in l %}
+    
+        <p class="data"><uni><a target="_blank" href="https://en.wikipedia.org/wiki/{{i.0}}">{{i.0}}</a> {{i.1}}</p></uni>
+    
+    {% endfor %}
+    </div>
+    <div class="survey">
+        <h3>Could you help us by filling this survey</h3>
+        <button class="result"><a href="{% url 'survey' %}" target="_blank">Take Survey</a></button>
+    </div>
+</body>
+
+</html>

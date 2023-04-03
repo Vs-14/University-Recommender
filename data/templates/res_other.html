@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'res_other.css' %}">
+    <script async src="{% static 'res_other.js' %}"></script>
+    <title>Results</title>
+</head>
+<body>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <header>
+        <nav>
+            <img src="https://teachbeyond.org/site-content/uploads/Beyond-Borders-Logo-2.png" id="header-img">
+            <ul id="nav-list">
+                <li id="nav-item"><a href="{% url 'index' %}" id="nav-link">Home</a></li>
+                <li id="nav-item"><a href="{% url 'faq' %}" id="nav-link">FAQ</a></li>
+                <li id="nav-item"><a href="{% url 'discuss' %}" id="nav-link">Discuss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="user">
+        <p>Hello {{name}}</p>
+        <p>GRE Score: {{gre}}</p>
+        <p>TOEFL Score: {{toefl}}</p> 
+        <p>CGPA: {{cgpa}}</p> 
+        <p>Chosen Country: {{country}}</p>
+    </div>
+    <div class="msg">
+      <p>On the basis of your input we are unfortunately</p>
+      <p>not able to recommend any universities</p>
+    </div>
+</body>
+</html>

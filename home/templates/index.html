@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>International Getaway</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="https://teachbeyond.org/site-content/uploads/Beyond-Borders-Logo-2.png" id="header-img">
+            <ul id="nav-list">
+                <p id="nav-item"><a href="" id="nav-link">Home</a></p>
+                <p id="nav-item"><a href="{% url 'faq' %}" id="nav-link">FAQ</a></p>
+                <p id="nav-item"><a href="{% url 'discuss' %}" id="nav-link">Discuss</a></p>
+            </ul>
+        </nav>
+    </header>
+   
+    <div id="wel">
+        <p id="wel-txt">Welcome to BEYOND BORDERS</p>
+    
+        <div id="info-block">
+            <p id="wel-info">Welcome, to our website dedicated to helping Indian students study abroad! Studying abroad is an incredible experience that can have a profound impact on your personal, academic, and professional growth. It provides a unique opportunity to immerse yourself in a new culture, learn a new language, and gain a fresh perspective on the world. However, the process of planning and preparing for studying abroad can be daunting and overwhelming. Our website is here to guide you through the process and help you make the most of your study abroad experience. We offer a wealth of resources, tips, and advice on everything from choosing a program to adjusting to life in a new country. Whether you're considering studying abroad for the first time or you're a seasoned traveler, we're here to support you every step of the way.</p>
+        </div>
+    </div>
+
+    <div id="ques">
+        <p>Why use a University Recommendation System  rather than Google or Online Counselling ?</p>
+    </div>
+
+    <div id="reason">
+
+    <main>
+    
+    <section class="cards">
+    
+
+    
+    <div class="card">
+        <p>
+            <strong>Personalization:</strong> A recommendation system can personalize recommendations based on a student's specific interests, academic background, and career goals. This level of personalization can save students time and effort in searching for relevant information.
+        </p>
+
+        <p>
+            <strong>Comprehensive:</strong> A recommendation system can provide students with a comprehensive view of available courses, programs, and resources that they may not have been aware of through a Google search or counseling.
+        </p>  
+    </div>
+    <div class="card">
+        <p>
+            <strong>Consistent</strong>: A recommendation system can provide consistent advice and guidance to students, regardless of the counselor's workload or experience.
+        </p>
+
+        <p>
+            <strong>Accessible:</strong> A recommendation system can be accessed 24/7, making it more accessible to students who may not have the time or resources to visit a counselor in person.
+        </p>
+    </div>
+    <div class="card">
+        <p>
+            <strong>Data-driven:</strong> A recommendation system can use data and analytics to continuously improve the relevance and accuracy of its recommendations, providing students with the most up-to-date information.
+        
+        </p>
+        
+        <p>
+
+            <strong>Unbiased:</strong> A recommendation system can provide unbiased recommendations, free from personal biases or opinions that may influence the advice provided by a counselor.
+        
+        </p>
+    </div>
+
+    </section>
+    </main>
+    </div>
+
+    <div id="user-info">
+        <p class="user-know">Let Us Get To Know You</p>
+    </div>
+
+    <section class="form-background">
+        
+        <form action="res" method="POST">{% csrf_token %}
+          <fieldset>
+            <div class="fbox">
+              <label for="name">Name</label></br>
+              <input type="text" name="name" maxlength="42" id="name" class="reqrem" required>
+            </div>
+            <div class="fbox">
+              <label for="cgpa">CGPA</label></br>
+              <input type="number" name="cgpa" min="0" max="10" step="any" required id="cgpa">
+            </div>
+            <div class="fbox">
+              <label for="gre">GRE Score</label></br>
+              <input type="number" name="gre" min="0" max="340" step="any" id="gre">
+            </div>
+            <div class="fbox">
+              <label for="toefl">TOEFL Score</label></br>
+              <input type="number" name="toefl" min="0" max="120" step="any" id="toefl">
+            </div>
+            <div class="fbox">
+              <label for="country">Preferred Country</label></br>
+              <input type="text" name="country" id="country">
+            </div>
+
+            <input class="reset-button" type="reset" value="Reset">
+            <input class="submit-button" type="submit" value="Submit">
+          </fieldset>
+        </form> 
+    </section>
+    <div class="streamlit">
+        <p id="stream"><a class="lit" href="https://shadowseekar-university-recommendation-recommender-jgvaut.streamlit.app/" target="_blank"><button class="result">Detailed Result</button></a></p>
+    </div>
+</body>
+</html>
